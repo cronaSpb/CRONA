@@ -1,0 +1,309 @@
+var btn1 = document.querySelector('.window1'),
+	mod_click1 = document.querySelector('.mod_click1'),
+	cloSeBtn1 = document.querySelector('.cloSeBtn1');
+
+
+	btn1.addEventListener('click', function(){
+		mod_click1.style.display = 'flex';
+
+	})
+
+cloSeBtn1.addEventListener('click', function() {
+		mod_click1.style.display = 'none';
+	})
+
+window.addEventListener('click', function(e) {
+	if(e.target == mod_click1) {
+		mod_click1.style.display = 'none';
+	}
+
+})
+
+
+var btn2 = document.querySelector('.window2'),
+	mod_click2 = document.querySelector('.mod_click2'),
+	cloSeBtn2 = document.querySelector('.cloSeBtn2');
+
+
+	btn2.addEventListener('click', function(){
+		mod_click2.style.display = 'flex';
+
+	})
+
+cloSeBtn2.addEventListener('click', function() {
+		mod_click2.style.display = 'none';
+	})
+
+window.addEventListener('click', function(e) {
+	if(e.target == mod_click2) {
+		mod_click2.style.display = 'none';
+	}
+
+})
+
+
+var btn3 = document.querySelector('.window3'),
+	mod_click3 = document.querySelector('.mod_click3'),
+	cloSeBtn3 = document.querySelector('.cloSeBtn3');
+
+
+	btn3.addEventListener('click', function(){
+		mod_click3.style.display = 'flex';
+
+	})
+
+cloSeBtn3.addEventListener('click', function() {
+		mod_click3.style.display = 'none';
+	})
+
+window.addEventListener('click', function(e) {
+	if(e.target == mod_click3) {
+		mod_click3.style.display = 'none';
+	}
+
+})
+
+var btn4 = document.querySelector('.window4'),
+	mod_click4 = document.querySelector('.mod_click4'),
+	cloSeBtn4 = document.querySelector('.cloSeBtn4');
+
+
+	btn4.addEventListener('click', function(){
+		mod_click4.style.display = 'flex';
+
+	})
+
+cloSeBtn4.addEventListener('click', function() {
+		mod_click4.style.display = 'none';
+	})
+
+window.addEventListener('click', function(e) {
+	if(e.target == mod_click4) {
+		mod_click4.style.display = 'none';
+	}
+
+})
+
+
+var btn5 = document.querySelector('.window5'),
+	mod_click5 = document.querySelector('.mod_click5'),
+	cloSeBtn5 = document.querySelector('.cloSeBtn5');
+
+
+	btn5.addEventListener('click', function(){
+		mod_click5.style.display = 'flex';
+
+	})
+
+cloSeBtn5.addEventListener('click', function() {
+		mod_click5.style.display = 'none';
+	})
+
+window.addEventListener('click', function(e) {
+	if(e.target == mod_click5) {
+		mod_click5.style.display = 'none';
+	}
+
+})
+
+
+var btn6 = document.querySelector('.window6'),
+	mod_click6 = document.querySelector('.mod_click6'),
+	cloSeBtn6 = document.querySelector('.cloSeBtn6');
+
+
+	btn6.addEventListener('click', function(){
+		mod_click6.style.display = 'flex';
+
+	})
+
+cloSeBtn6.addEventListener('click', function() {
+		mod_click6.style.display = 'none';
+	})
+
+window.addEventListener('click', function(e) {
+	if(e.target == mod_click6) {
+		mod_click6.style.display = 'none';
+	}
+
+})
+
+
+
+////////////////////////////////////////////////////
+
+
+
+var modal = document.getElementById('myModal');
+var img = document.getElementById('myImg1');
+
+
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function () {
+	modal.style.display = "none";
+}
+
+
+
+
+var img = document.getElementById('myImg2');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var img = document.getElementById('myImg3');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var img = document.getElementById('myImg4');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var img = document.getElementById('myImg5');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var img = document.getElementById('myImg6');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var img = document.getElementById('myImg7');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var img = document.getElementById('myImg8');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var img = document.getElementById('myImg9');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+
+/*var img = document.getElementById('myImg2');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+var img = document.getElementById('myImg3');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+
+var img = document.getElementById('myImg4');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+var img = document.getElementById('myImg5');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+var img = document.getElementById('myImg6');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+
+var img = document.getElementById('myImg7');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+var img = document.getElementById('myImg8');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+var img = document.getElementById('myImg9');
+img.onclick = function () {
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+/*var img = document.getElementById('myImg2');
+var img = document.getElementById('myImg3');
+var img = document.getElementById('myImg4');
+var img = document.getElementById('myImg6');
+var img = document.getElementById('myImg5');
+var img = document.getElementById('myImg7');
+var img = document.getElementById('myImg8');
+var img = document.getElementById('myImg9');*/
+
+
+
+	/*var myImg1 = arr;
+ var arr = new Array(myImg1,myImg2, myImg3,myImg4,myImg5,myImg6,myImg7,myImg8,myImg9);
+ for (var i = 0; i < arr.length; i++) {
+	 document.write(arr[i]);
+ }
+		var im = arr;
+	switch(im) {
+	case 1: document.write("ghjgjhg"); break;
+	case 2: document.write("modalImg"); break;
+	case 3: document.write("captionText"); break;
+	case 4: document.getElementsByClassName("modal-content"); break;
+	case 5: document.write("captionText"); break;
+	case 6: document.getElementById("myImg6"); break;
+	case 7: document.write("captionText = myImg7"); break;
+	case 8: document.write("captionText = myImg8"); break;
+	case 9: document.write("captionText = myImg9"); break;
+}
+*/
