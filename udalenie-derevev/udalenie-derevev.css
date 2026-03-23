@@ -1,0 +1,1195 @@
+/* ПРОСТЫЕ СТИЛИ ДЛЯ ФУТЕРА - ТОЧНАЯ КОПИЯ ИЗ LESNOY_CODE */
+footer .container {
+	height: 840px;
+	border-top: 2px solid #CAE329;
+	background-color: #193c6d;
+    filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797');
+    background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg);
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797));
+    background-image: -webkit-linear-gradient(135deg, #003073, #029797);
+    background-image: -moz-linear-gradient(45deg, #003073, #029797);
+    background-image: -ms-linear-gradient(45deg, #003073 0, #029797 100%);
+    background-image: -o-linear-gradient(45deg, #003073, #029797);
+    background-image: linear-gradient(135deg, #003073, #029797);
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+    padding-top: 10px; /* Внутренний отступ сверху 10px */
+    max-width: none; /* Отключаем ограничение ширины */
+    width: 100%; /* Разворачиваем на полную ширину */
+}
+ 
+footer .aria-label {
+    float: none;
+    text-decoration: none;
+}
+
+/* Стили для заголовков в футере */
+footer .footer-content h3 {
+    color: #CAE329;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Стили для текста в футере */
+footer .footer-content p {
+    color: #000;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Стили для ссылок в футере */
+footer .footer-content a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer .footer-content a:hover {
+    color: #CAE329;
+}
+
+/* Стили для списков в футере */
+footer .footer-services ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+footer .footer-services ul li {
+    margin-bottom: 8px;
+}
+
+footer .footer-services ul li a {
+    display: block;
+    padding: 5px 0;
+}
+
+/* Стили для навигации в футере */
+footer .footer-bottom {
+    border-top: 1px solid rgba(202, 227, 41, 0.3);
+    padding: 20px 0;
+    text-align: center;
+    clear: both;
+}
+
+footer .footer-bottom p {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+footer .aria-label ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+footer .aria-label ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer .aria-label ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer .aria-label ul li a:hover {
+    color: #CAE329;
+}
+
+body {
+	background: #CAE329;
+	font-family: COMIC SANS MS;
+	padding: 0;
+	margin: 0;
+	color: #000;
+	text-align: justify;
+}
+
+/* ОБЩИЕ СТИЛИ ДЛЯ ВСЕГО САЙТА КАК В LESNOY_CODE */
+h3 {
+    color: #CAE329;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+p {
+    color: #000;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #CAE329;
+}
+
+.logo{
+	margin-top: 51px;
+	float: right;
+}
+
+.clearfix:after {
+	content:'';
+	display: table;
+	width: 100%;
+	clear: both;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+header {	
+	background: url(../img/M_geuJ690QE.jpg )  no-repeat center top / cover;
+	padding-bottom: 760px;
+	opacity: 100;
+}
+
+a { 
+  color: green;
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.width {
+	 max-width: 1470px;
+	 margin: 0 auto;
+	}
+
+section {
+	background: #333;
+	margin-top: 2px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+.contact {
+	padding-top: 10px;
+	margin: 0;
+	display: block;
+	float: right;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.contact li {
+	float: left;
+	display: block;
+	color: #fff;
+	margin-right: 80px;
+}
+
+.phone {
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 3px;
+	margin-left: 3px;
+}
+
+.mail1 {
+	float: left;
+}
+
+
+.single a {
+	border: none;
+	background: transparent;
+	font-size: 20px;
+}
+
+.mail0 {
+	font-family: SANS-SERIF;
+	margin-top: 20px;
+	width: 280px;
+	border-bottom: 1px solid #CAE329;
+}
+
+#customerData {
+	margin-top: 35px;
+	margin-left: 50px;
+}
+
+.form-control {
+	background: rgba(0,0,0,.9);
+	color: #fff;
+	border-radius: 1px;
+	display: block;
+	width: 258px;
+	margin-top: 15px;
+	padding: 15px 10px;
+	float: left;
+	text-decoration: none;
+	text-align: left;
+	font-size: 18px;
+	border: 1px solid #CAE329;
+	box-shadow: 3px 3px 7px #000;
+	-moz-transition: all 0.2s 0.02s ease;
+	-o-transition: all 0.2s 0.02s ease;
+	-webkit-transition: all 0.2s 0.02s ease;
+}
+
+.inputTop:nth-child {
+	margin-top: 0px;
+}
+
+.btn_form {
+	background: #CAE329;
+	color: #000;
+	border-radius: 1px;
+	display: block;
+	margin-top: 15px;
+	width: 150px;
+	padding: 15px 10px;
+	float: left;
+	text-decoration: none;
+	text-align: center;
+	font-size: 18px;
+	border: 1px solid #CAE329;
+	box-shadow: 3px 3px 7px #000;
+	-moz-transition: all 0.2s 0.02s ease;
+	-o-transition: all 0.2s 0.02s ease;
+	-webkit-transition: all 0.2s 0.02s ease;
+}
+
+.btn_form:focus {
+	background: rgba(0,0,0,.7);
+}
+
+label {
+	color: red;
+	float: left;
+}
+
+.mod-body0 {
+	height: 395px;
+	width: 360px;
+}
+
+
+.cloSeBtn0 {
+	cursor: pointer;
+	float: right;
+	font-size: 40px;
+	color: #CAE329;
+	font-family: Arial;
+}
+
+.cloSeBtn0:hover {
+    color: #000;
+}
+
+.mod_click0 {
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	display: none;
+	top: 0px;
+	bottom: 0;
+	right: 0;
+	left: 0px;
+	position: fixed;
+	perspective: 500px;
+}
+
+.mod_click0 .mod-wrapper0 {
+	width: 100%;
+	max-width: 360px;
+	position: absolute;
+	text-align: left;
+	box-shadow: 0px 0px 13px 0px rgba(0,0,0,0,.4);
+	transform: rotateX(0deg);
+	animation-name: mod_click1;
+	animation-duration: 1s;
+}
+
+.tel {
+	width: 280px;
+}
+
+.tel a:hover{
+	color: #CAE329;
+	background: transparent;
+	width: auto;
+	height: auto;
+}
+
+.mail0 a:hover{
+	color: #CAE329;
+	background: transparent;
+	width: auto;
+	height: auto;
+}
+
+.contact a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	display: block;
+}
+
+.button span {
+	margin-left: 30px;
+	
+}
+.house {
+	display: inline-block;
+	margin-top: 0px;
+	margin-left: 30px;
+}
+
+#test {
+ 	color:#FFFFFF;
+	padding:0px;
+	margin:0px; 
+	opacity:100;
+}
+
+.animated {
+	text-align: center;
+}
+
+.title {
+	color: #fff;
+	padding: 0px;
+	margin-right: 100px;
+	width: auto;
+	margin-bottom: 80px;
+}
+
+.title p {
+	margin-right: 0px;
+	width: auto;
+	text-align: justify;
+	display: block;
+	line-height: 1.8em;
+}
+
+/*.services { */
+/*	float: right;*/
+/*	margin-left: 100px;*/
+/*}*/
+
+.sliderIm {
+	background: url(../img/3HirQux6wxw.jpg )  no-repeat center top / cover;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+	float: right ;
+	width: 880px;
+	height: 550px;
+	margin-top: 30px;
+	margin-right: 100px;
+	margin-left: 100px;
+	margin-bottom: 50px;
+}
+
+/*.sliderIm h2 {*/
+/*	color: #fff;*/
+/*	margin-left: 100px;*/
+/*}*/
+
+.services_item2 {
+	width: auto;
+}
+
+.services_item2 h3 {
+	color: #fff;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.services_item2 p {
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.8em;
+	margin-bottom: 40px;
+}
+
+.button {
+	font-family: SANS-SERIF;
+	color: #fff;
+	border-radius: 1px;
+	display: block;
+	width: 240px;
+	padding: 20px 0;
+	text-decoration: none;
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	border: 1px solid #CAE329;
+	box-shadow: 3px 3px 7px #000;
+}
+
+.button:hover{
+	color: #000;
+	background: #CAE329;
+	width: 240px;
+	height: auto;
+	border-radius: 1px;
+}
+
+.menu {
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+ .menu li {
+	float: left;
+	display: block;
+	margin-right: 41px;
+}
+
+.menu li:nth-child(1) {
+	margin-right: 0px;
+}
+
+.menu a {
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+	border-top: 7px solid #fff;
+	display: block;
+}
+
+.menu a:hover{
+	background: #fff;
+	width: auto;
+	height: auto;
+	opacity: 0.7;
+}
+
+footer{
+	background: url(../img/70_3.jpg) no-repeat center top / cover;
+	
+}
+
+footer .container_2 {
+	height: 0 auto;
+
+}
+
+footer .im {
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 36px;
+	border-top: 7px solid #fff;
+}
+
+footer .gmail {
+	margin-top: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+footer .im:hover {
+	background: #fff
+}
+
+.foot {
+	padding-top: 20px;
+	margin-top: 20px;
+	margin-left: 350px;
+}
+
+footer:hover {
+	opacity: 100;
+}
+
+footer .container_2 {
+	width: 0 auto;
+}
+
+footer .info {
+	margin-top: 0px;
+	font-family: Arial;
+	margin-right: 20px;
+}
+
+footer .copirait {
+	margin-right: 50px;
+	margin-top: 20px;
+	font-family: Arial;
+}
+
+@media screen and (max-width: 1639px) {
+
+.title {
+	margin-left: 100px;
+}
+
+.sliderIm {
+	width: 680px;
+	height:450px;
+	margin-left: 100px;
+}
+
+ .services {
+ 	margin-right: 100px;
+ 	margin-left: 100px;
+}
+
+}
+
+@media screen and (max-width: 1400px) {
+
+	.container {
+	max-width: 940px;
+}
+
+	.sliderIm {
+	width: 580px;
+	height: 350px;
+	margin-left: 100px;
+}
+
+ 	.services {
+ 	margin-right: 100px;
+ }
+
+ .foot {
+    margin-left: 250px;
+}
+
+}
+
+@media screen and (max-width: 1299px) {
+
+.title {
+	margin: 0px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.contact {
+    margin-right: 40px;
+}
+
+.container {
+	max-width: 840px;
+}
+
+.container1 {
+	max-width: 840px;
+	margin: 0 auto;
+}
+
+.sliderIm {
+	width: 842px;
+	height: 450px;
+	margin-right: 0px;
+	margin-left: 90px;
+	margin-bottom: 50px;
+}
+
+.services {
+ 	margin-right: 0px;
+ 	margin-left: 0px;
+}
+
+ .container2 {
+	max-width: 740px;
+}
+
+ footer .im {
+	margin-right: 10px;
+	width: 30px;
+	margin-top: 10px;
+}
+	
+
+footer .copirait {
+ 	font-size: 14px;
+ 	margin-top: 20px;
+ 	margin-right: 45px;
+}
+
+footer .info {
+ 	font-size: 14px;
+ 	margin-top: 0px;
+}
+
+.menu li:nth-child(1) {
+    margin-right: 25px;
+}
+
+footer img {
+  	width: 40px;
+}
+
+}
+
+
+@media screen and (max-width: 1000px) {
+
+.title {
+	width: 650px;
+}
+
+.contact {
+    margin-right: 0px;
+}
+	
+.container {
+	max-width: 740px;
+}
+
+.container1 {
+	max-width: 740px;
+}
+
+.container2 {
+	max-width: 740px;
+}
+
+.sliderIm {
+	width: 645px;
+	height: 350px;
+	/*margin-left: 70px;*/
+	margin-top: 10px;
+	margin-right: 95px;
+	margin-bottom: 50px;
+}
+
+ .services {
+ 	/*margin-right: 200px;*/
+ 	margin-right: 100px
+ }
+
+ .foot {
+    margin-left: 180px;
+}
+
+ footer .im {
+	margin-right: 10px;
+	width: 30px;
+	/*margin-top: 0px;*/
+}
+	
+
+footer .copirait {
+ 	font-size: 14px;
+ 	margin-top: 20px;
+ 	/*margin-right: 40px;*/
+ }
+
+ footer .info {
+ 	font-size: 14px;
+ 	margin-top: 0px;
+ }
+
+  footer img {
+  	width: 40px;
+}
+
+}
+
+@media screen and (max-width: 760px) {
+
+.mail0 {
+	border: none;
+}
+
+.button {
+ 	margin-left: 10px;
+ 	margin-bottom: 50px;
+}
+
+.contact li {
+ 	margin-right: 0px;
+}
+
+.contact {
+ 	margin-left: 80px;
+}
+
+.mail0 {
+	margin-bottom: 40px;
+	
+}
+
+.title {
+	width: 540px;
+	/*margin-left: 35px;*/
+	text-align: left;
+	margin-right: 40px;
+}
+
+.title p {
+	margin-right: 40px;
+}
+
+
+.title h2 {
+	margin-right: 100px;
+}
+	
+.container {
+	max-width: 540px;
+}
+
+.container1 {
+	max-width: 540px;
+}
+
+.container2 {
+	max-width: 540px;
+}
+
+.sliderIm {
+	width: 500px;
+	height: 350px;
+	margin-right: 40px;
+	margin-left: 35px;
+	margin-bottom: 50px;
+}
+
+.services {
+ 	margin-right: 40px;
+ }
+
+.foot {
+    margin-left: 90px;
+}
+
+ footer .im {
+	margin-right: 0px;
+}
+	
+
+  footer .copirait {
+ 	font-size: 12px;
+ 	margin-right: 35px;
+}
+
+footer .info {
+ 	font-size: 12px;
+ 	margin-top: 0px;
+ 	margin-right: 75px;
+}
+
+footer img {
+  	width: 40px;
+
+}
+
+}
+
+
+@media screen and (max-width: 560px) {
+
+.contact {
+    margin-left: 40px;
+}
+
+.logo {
+	float: left;
+}
+
+.title {
+	width: 380px;
+	margin-left: 30px;
+}
+
+.title p {
+    margin-right: 0px;
+}
+
+.title h2 {
+	margin-right: 40px;
+	text-align: center;
+}
+	
+.container {
+	max-width: 440px;
+}
+
+.container1 {
+	max-width: 440px;
+}
+
+.container2 {
+	max-width: 440px;
+}
+
+.sliderIm {
+	width: 380px;
+	height: 180px;
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+
+.services {
+    float: left;
+    margin-left: 30px;
+}
+
+.services_item2 {
+ 	width: 380px;
+ }
+
+.foot {
+    margin-left: 40px;
+}
+
+footer .copirait {
+ 	font-size: 12px;
+ 	margin-top: 20px;
+ 	margin-right: 30px;
+ 	margin-left: 20px;
+}
+
+footer .info {
+ 	font-size: 12px;
+ 	margin-top: 0px;
+ 	margin-left: 20px;
+}
+
+footer img {
+  	width: 40px;
+
+}
+
+}
+
+
+
+@media screen and (max-width: 470px) {
+
+.contact {
+ 	margin-left: 0px;
+}
+
+.logo {
+	float: left;
+}
+
+#customerData {
+	margin-top: 35px;
+	margin-left: 5px;
+}
+
+.mod_click0 .mod-wrapper0 {
+    max-width: 310px;
+}
+
+.mod-body0 {
+    width: 290px;
+}
+
+.title {
+	width: 310px;
+	margin-left: 10px;
+}
+
+.title p {
+	width: 310px;
+}
+
+.title h2 {
+	margin-left: 0px;
+	width: 310px;
+}
+
+.container {
+	max-width: 340px;
+}
+
+.container1 {
+	max-width: 340px;
+}
+
+.container2 {
+	max-width: 340px;
+}
+
+.sliderIm {
+	width: 310px;
+	height: 180px;
+	margin-right: 20px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.sliderIm h2 {
+	font-size: 20px;
+	margin-right: 60px;
+	text-align: center;
+}
+
+.services {
+    float: left;
+    margin-left: 10px;
+}
+
+.services_item2 {
+ 	width: 310px;
+}
+
+.foot {
+    margin-left: 0px;
+}
+
+.menu li:nth-child(1) {
+    margin-right: 0px;
+}
+
+footer .im {
+ 	margin-left: 0px;
+	margin-right: 0px;
+	width: 10px;
+	margin-top: 0px;
+}
+	
+
+footer .copirait {
+ 	font-size: 10px;
+ 	margin-top: 10px;
+ 	margin-right: 30px;
+}
+
+ footer .info {
+ 	font-size: 10px;
+}
+
+footer img {
+  	width: 30px;
+
+}
+
+/* ===========================================
+   СТИЛИ ФУТЕРА (из Lesnoy_code)
+   =========================================== */
+
+footer[role="contentinfo"] .container {
+	height: 840px !important;
+	border-top: 2px solid #CAE329 !important;
+	background-color: #193c6d !important;
+    filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797') !important;
+    background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg) !important;
+    background-size: 100% !important;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797)) !important;
+    background-image: -webkit-linear-gradient(135deg, #003073, #029797) !important;
+    background-image: -moz-linear-gradient(45deg, #003073, #029797) !important;
+    background-image: -ms-linear-gradient(45deg, #003073 0, #029797 100%) !important;
+    background-image: -o-linear-gradient(45deg, #003073, #029797) !important;
+    background-image: linear-gradient(135deg, #003073, #029797) !important;
+    text-align: center !important;
+    margin: 0px !important;
+    overflow: hidden !important;
+    max-width: none !important; /* Отключаем ограничение ширины */
+    width: 100% !important; /* Разворачиваем на полную ширину */
+    padding-top: 10px !important; /* Внутренний отступ сверху 10px */
+}
+
+footer[role="contentinfo"] .aria-label {
+    float: none !important;
+    text-decoration: none !important;
+}
+
+/* Структура футера */
+footer[role="contentinfo"] .footer-content {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    padding: 40px 0 !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+footer[role="contentinfo"] .footer-content section {
+    flex: 1 !important;
+    min-width: 250px !important;
+    margin: 0 15px !important;
+    text-align: left !important;
+}
+
+footer[role="contentinfo"] .footer-content h3 {
+    color: #CAE329 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin-bottom: 15px !important;
+    text-transform: uppercase !important;
+}
+
+footer[role="contentinfo"] .footer-content p {
+    color: #fff !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 10px !important;
+}
+
+footer[role="contentinfo"] .footer-content a {
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+footer[role="contentinfo"] .footer-content a:hover {
+    color: #CAE329 !important;
+}
+
+footer[role="contentinfo"] .footer-bottom {
+    border-top: 1px solid rgba(202, 227, 41, 0.3) !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+}
+
+footer[role="contentinfo"] .footer-bottom p {
+    color: #fff !important;
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Убираем черные точки из списка услуг в футере */
+footer[role="contentinfo"] .footer-services ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+footer[role="contentinfo"] .footer-services ul li {
+    margin-bottom: 8px !important;
+}
+
+footer[role="contentinfo"] .footer-services ul li a {
+    display: block !important;
+    padding: 5px 0 !important;
+}
+
+/* Убираем точки из списка навигации в футере */
+footer[role="contentinfo"] .aria-label ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li {
+    display: inline !important;
+    margin-right: 20px !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li a {
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li a:hover {
+    color: #CAE329 !important;
+}
+
+/* Адаптивность футера из Lesnoy_code */
+@media (max-width: 1240px) {
+    footer[role="contentinfo"] .container {
+        height: auto !important;
+        padding: 30px 15px !important;
+    }
+
+    footer[role="contentinfo"] p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    
+    footer[role="contentinfo"] .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    footer[role="contentinfo"] .footer-content section {
+        margin-bottom: 30px !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    footer[role="contentinfo"] .container {
+        padding: 20px 10px !important;
+    }
+    
+    footer[role="contentinfo"] .footer-content section {
+        margin: 0 0 20px 0 !important;
+    }
+    
+    footer[role="contentinfo"] .footer-content h3 {
+        font-size: 16px !important;
+    }
+    
+    footer[role="contentinfo"] .footer-content p {
+        font-size: 13px !important;
+    }
+}
+
+}
+
+@media screen and (max-width: 391px) {
+
+.container {
+	max-width: 310px;
+}
+
+.container1 {
+	max-width: 310px;
+}
+
+.container2 {
+	max-width: 310px;
+}
+
+ul {
+	width: 290px;
+} 
+
+.logo {
+	margin-left: 5px;
+}
+
+.title {
+	width: 290px;
+	margin-left: 5px;
+}
+
+.title h2 {
+    width: 290px;
+}
+
+.title p {
+    width: 290px;
+}
+
+.sliderIm {
+	width: 290px;
+	height: 180px;
+	margin-right: 15px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+.services {
+    float: left;
+    margin-left: 5px;
+}
+
+.services_item2 {
+ 	width: 290px;
+}
+
+}
+
