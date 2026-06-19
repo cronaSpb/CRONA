@@ -1,426 +1,448 @@
-/**
- * ИИ-Ассистент Лесной код от Crona
- * Поддерживает текстовый и голосовой ввод/вывод
- * Интеграция с OpenRouter API
- */
-
+// Универсальный ИИ-ассистент CRONA_AI для всех страниц cronа-spb.com
 class AIAssistant {
     constructor() {
-        // Определяем режим работы: локально (file://) или через сервер
-        this.isLocalMode = window.location.protocol === 'file:' || window.location.hostname === 'localhost';
-        
-        // API ключ используется только в локальном режиме (file://)
-        // В серверном режиме ключ хранится в api.php
-        this.OPENROUTER_API_KEY = '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';
-        
-        // Настройки модели OpenRouter
-        this.MODEL = 'anthropic/claude-3.5-haiku';
+        // Временно всегда используем прямой режим для тестирования
+        this.isLocalMode = true;
+        // Загружаем конфигурацию из config.js (защищен .gitignore)
+        this.OPENROUTER_API_KEY = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.OPENROUTER_API_KEY : '';
+        this.MODEL = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.MODEL : 'anthropic/claude-3.5-haiku';
         this.SITE_URL = window.location.origin;
-        this.SITE_NAME = 'Лесной код от Crona';
+        this.SITE_NAME = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.SITE_NAME : 'Crona - Уход за деревьями';
         
-        // Системный промпт для ассистента
-        this.SYSTEM_PROMPT = `Вы - ИИ-ассистент компании CRONA_AI от Crona, специализирующейся на уходе за деревьями и формировании лесной растительности в северо-западном регионе России (Санкт-Петербург и Ленинградская область).
+        // Универсальный промпт для всех страниц
+        this.SYSTEM_PROMPT = `Вы - ИИ-ассистент компании Crona, профессиональной арбористической компании, специализирующейся на уходе за деревьями в Санкт-Петербурге и Ленинградской области.
 
-=== ВАША РОЛЬ ===
-- Отвечать на вопросы об уходе за растениями
-- Консультировать по услугам: кронирование, посадка, пересадка, рекультивация
-- Давать рекомендации по уходу за древесными растениями в условиях северо-западного региона
-- Помогать оформлять заявки на услуги
+=== О КОМПАНИИ CRONA ===
+Компания Crona - профессионалы в области арбористики и ухода за деревьями в СПб и ЛО
+Сайт: https://crona-spb.com
+Работаем по всему северо-западному региону
 
-=== ВАШИ ЗНАНИЯ ===
-- Особенности лесной растительности северо-западного региона
-- Виды деревьев и кустарников: ель, сосна, береза, осина, ольха, рябина, ива и др.
-- Условия произрастания: таежная зона, подзолистые почвы, влажный климат
-- Технологии кронирования, посадки, пересадки, стабилизации
-- Сезонные работы: весенние, летние, осенние, зимние
-- Защита от вредителей и болезней
-
-=== ПРАВИЛА ОБЩЕНИЯ ===
-- Отвечать по-русски, профессионально и дружелюбно
-- Давать конкретные, практические советы
-- Уточнять детали, если вопрос неясен
-- Предлагать услуги компании Crona при возможности
-- Использовать термины: кронирование, стабилизация, рекультивация
-
-=== КОНТАКТЫ КОМПАНИИ ===
-- Телефон: +7 (953) 372 53 87
+=== КОНТАКТЫ ===
+- Телефон: +7 (953) 372-53-87 (основной)
+- Телефон: +7 (812) 960-55-20
 - Email: E-mail@crona-spb.com
-- Сайт: https://bio-plus.ru
-- Адрес: Санкт-Петербург и Ленинградская область
 
-Отвечайте как настоящий эксперт по лесной растительности!`;
+=== ОСНОВНЫЕ УСЛУГИ ===
+
+**Кронирование (частичная обрезка):**
+- Санитарная подрезка: удаление сухих, больных, надломленных ветвей
+- Формирование кроны: создание правильной формы для долголетия растения
+- Поллардинг и топинг: специальные виды обрезки
+- Важность правильного времени года и возраста растения
+
+**Стабилизация ветвей и деревьев:**
+- Каблинг: канатная система стабилизации (статическая и динамическая)
+- Брейсинг: система жестких стяжек, винтовых хомутов, скоб
+- Применяется для многоствольных деревьев, опасных углов ветвей
+
+**Профилактика и лечение:**
+- Уменьшение антропогенной нагрузки на растения
+- Использование фунгицидов весной против грибных заболеваний
+- Применение репеллентов для защиты от вредителей
+- Улучшение иммунных качеств растений через удобрения
+
+**Удаление деревьев:**
+- Безопасное удаление аварийных деревьев
+- Такелажные работы до 500кг
+- Минимальный заказ: от 12000 рублей
+
+=== ИЗ ДИПЛОМНОЙ РАБОТЫ ===
+
+**Подрезка деревьев:**
+- Техника естественной обрезки (Natural Pruning Technique)
+- Теория компартментализации гнилей (методика Шиго)
+
+**Инъектирование:**
+- Лечение голландской болезни и бактериальной водянки
+- Калиевые растворы лишайника Hypogymnia physodes
+
+**Опрыскивание:**
+- Березовый деготь: предотвращает заселение короедом, безопасен для людей
+- Нематоды: эффективны против короеда, безопасны в городах
+
+**Диагностика:**
+- Акустическая дефектоскопия (Arbotom, PicusSonic)
+- Радиолокационная диагностика (TreeRadar)
+- Визуальная оценка деревьев (VTA)
+
+=== ПРАКТИЧЕСКИЕ РЕЗУЛЬТАТЫ ===
+1. Опрыскивание березовым дегтем эффективно против короеда, безопасно для людей
+2. Нематоды показывают результаты с уже зараженными деревьями
+3. Инъектирование требует дальнейших исследований
+
+Важно:
+- Отвечайте на русском языке
+- Будьте профессиональны и дружелюбны
+- Давайте конкретные рекомендации по уходу за деревьями
+- Минимальный заказ от 8000 рублей (удаление от 12000)
+- При необходимости предлагайте вызов специалиста`;
+
+        this.isOpen = false;
+        this.isVoiceEnabled = true;
+        this.isRecording = false;
+        this.messages = [];
+        this.lastMessageWasVoice = false;
+        this.recognition = null;
+        this.synthesis = window.speechSynthesis;
+        
+        this.elements = {
+            widget: document.getElementById('ai-assistant-widget'),
+            toggleBtn: document.getElementById('ai-toggle-btn'),
+            chatContainer: document.getElementById('ai-chat-container'),
+            closeBtn: document.getElementById('ai-close-btn'),
+            messagesContainer: document.getElementById('ai-chat-messages'),
+            input: document.getElementById('ai-chat-input'),
+            sendBtn: document.getElementById('ai-send-btn'),
+            voiceToggle: document.getElementById('ai-voice-toggle'),
+            voiceInputBtn: document.getElementById('ai-voice-input-btn'),
+            status: document.getElementById('ai-status')
+        };
 
         this.init();
     }
 
     init() {
-        this.createAssistantUI();
-        this.setupEventListeners();
-        this.loadConversationHistory();
-        
-        console.log('AI Assistant для Лесного кода инициализирован');
-    }
-
-    createAssistantUI() {
-        // Создаем основной контейнер ассистента
-        const assistantHTML = `
-            <div id="ai-assistant-container" class="ai-assistant-container">
-                <!-- Кнопка ассистента -->
-                <div id="ai-assistant-button" class="ai-assistant-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor"/>
-                        <path d="M6 12H18M6 8H18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <span class="ai-assistant-tooltip">ИИ-Ассистент Лесного кода</span>
-                </div>
-
-                <!-- Окно ассистента -->
-                <div id="ai-assistant-window" class="ai-assistant-window">
-                    <div class="ai-assistant-header">
-                        <h3>🌲 ИИ-Ассистент Лесного кода</h3>
-                        <button id="ai-assistant-close" class="ai-assistant-close">×</button>
-                    </div>
-                    
-                    <div class="ai-assistant-body">
-                        <!-- История сообщений -->
-                        <div id="ai-assistant-messages" class="ai-assistant-messages"></div>
-                        
-                        <!-- Поле ввода -->
-                        <div class="ai-assistant-input-container">
-                            <textarea id="ai-assistant-input" 
-                                class="ai-assistant-input" 
-                                placeholder="Спросите об уходе за лесными растениями..."
-                                rows="3"></textarea>
-                            
-                            <!-- Кнопки управления -->
-                            <div class="ai-assistant-controls">
-                                <button id="ai-assistant-voice" class="ai-assistant-voice-btn" title="Голосовой ввод">
-                                    🎤
-                                </button>
-                                <button id="ai-assistant-send" class="ai-assistant-send-btn">
-                                    Отправить
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Индикатор загрузки -->
-                <div id="ai-assistant-loading" class="ai-assistant-loading">
-                    <div class="ai-assistant-spinner"></div>
-                    <span>ИИ-ассистент думает...</span>
-                </div>
-            </div>
-        `;
-
-        document.body.insertAdjacentHTML('beforeend', assistantHTML);
-    }
-
-    setupEventListeners() {
-        const button = document.getElementById('ai-assistant-button');
-        const window = document.getElementById('ai-assistant-window');
-        const closeBtn = document.getElementById('ai-assistant-close');
-        const sendBtn = document.getElementById('ai-assistant-send');
-        const voiceBtn = document.getElementById('ai-assistant-voice');
-        const input = document.getElementById('ai-assistant-input');
-
-        // Открытие/закрытие окна
-        button.addEventListener('click', () => this.toggleWindow());
-        closeBtn.addEventListener('click', () => this.hideWindow());
-
-        // Отправка сообщения
-        sendBtn.addEventListener('click', () => this.sendMessage());
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                this.sendMessage();
-            }
-        });
-
-        // Голосовой ввод
-        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-            voiceBtn.addEventListener('click', () => this.toggleVoiceInput());
-        } else {
-            voiceBtn.style.display = 'none';
+        if (!this.elements.widget || !this.elements.toggleBtn) {
+            console.error('AI Assistant: Не найдены необходимые DOM элементы');
+            return;
         }
-
-        // Закрытие при клике вне окна
-        document.addEventListener('click', (e) => {
-            if (!window.contains(e.target) && !button.contains(e.target)) {
-                this.hideWindow();
-            }
-        });
+        this.addWelcomeMessage();
+        this.bindEvents();
+        this.checkApiKey();
+        this.initSpeechRecognition();
     }
 
-    toggleWindow() {
-        const window = document.getElementById('ai-assistant-window');
-        const button = document.getElementById('ai-assistant-button');
-        
-        if (window.style.display === 'block') {
-            this.hideWindow();
+    bindEvents() {
+        this.elements.toggleBtn.addEventListener('click', () => this.toggleWidget());
+        this.elements.closeBtn.addEventListener('click', () => this.closeWidget());
+        this.elements.sendBtn.addEventListener('click', () => this.sendMessage());
+        this.elements.input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') this.sendMessage();
+        });
+        this.elements.voiceToggle.addEventListener('click', () => this.toggleVoiceOutput());
+        this.elements.voiceInputBtn.addEventListener('click', () => this.toggleVoiceInput());
+    }
+
+    toggleWidget() {
+        this.isOpen = !this.isOpen;
+        if (this.isOpen) {
+            this.elements.chatContainer.classList.add('ai-active');
+            this.elements.input.focus();
         } else {
-            this.showWindow();
+            this.elements.chatContainer.classList.remove('ai-active');
         }
     }
 
-    showWindow() {
-        const window = document.getElementById('ai-assistant-window');
-        const button = document.getElementById('ai-assistant-button');
-        
-        window.style.display = 'block';
-        button.classList.add('active');
-        
-        // Фокус на поле ввода
-        setTimeout(() => {
-            document.getElementById('ai-assistant-input').focus();
-        }, 300);
+    closeWidget() {
+        this.isOpen = false;
+        this.elements.chatContainer.classList.remove('ai-active');
     }
 
-    hideWindow() {
-        const window = document.getElementById('ai-assistant-window');
-        const button = document.getElementById('ai-assistant-button');
-        
-        window.style.display = 'none';
-        button.classList.remove('active');
+    addWelcomeMessage() {
+        this.messages.push({
+            role: 'assistant',
+            content: 'Здравствуйте! Я ИИ-ассистент CRONA_AI от Crona. Готов ответить на вопросы об уходе за растениями в северо-западном регионе. Можете писать или говорить!'
+        });
     }
 
-    async sendMessage() {
-        const input = document.getElementById('ai-assistant-input');
-        const message = input.value.trim();
-        
+    async sendMessage(userMessage = null) {
+        const message = userMessage || this.elements.input.value.trim();
         if (!message) return;
-
-        // Добавляем сообщение пользователя
-        this.addMessage('user', message);
-        input.value = '';
         
-        // Показываем индикатор загрузки
-        this.showLoading();
-
+        if (!userMessage) {
+            this.elements.input.value = '';
+        }
+        
+        this.messages.push({ role: 'user', content: message });
+        this.addMessageToUI('user', message);
+        this.lastMessageWasVoice = false;
+        
+        this.showStatus('Думаю...', 0, 'ai-thinking');
+        
         try {
-            const response = await this.getAIResponse(message);
-            this.addMessage('assistant', response);
+            const response = await this.getAIResponse();
+            this.hideStatus();
+            this.messages.push({ role: 'assistant', content: response });
+            this.addMessageToUI('bot', response);
+
+            if (this.isVoiceEnabled && this.lastMessageWasVoice) {
+                this.speak(response);
+            }
+
         } catch (error) {
+            this.hideStatus();
             console.error('AI Assistant Error:', error);
-            this.addMessage('assistant', 'Извините, произошла ошибка. Попробуйте еще раз.');
-        } finally {
-            this.hideLoading();
+            console.error('Error details:', error.message);
+            console.error('Current mode:', this.isLocalMode ? 'Local (file://)' : 'Server (http://)');
+            
+            let errorMessage = 'Извините, произошла ошибка. ';
+            if (this.isLocalMode) {
+                errorMessage += 'Для работы ИИ ассистента запустите локальный сервер через start-server.bat. ';
+            } else {
+                errorMessage += 'Проверьте консоль браузера (F12) для деталей. ';
+            }
+            errorMessage += 'Или свяжитесь с нами по телефону: +7 (953) 372-53-87';
+            
+            this.addMessageToUI('bot', errorMessage);
         }
     }
 
-    async getAIResponse(message) {
-        const conversationHistory = this.getConversationHistory();
-        
-        const payload = {
+    addMessageToUI(role, content) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `ai-message ai-message-${role}`;
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'ai-message-content';
+        contentDiv.textContent = content;
+        messageDiv.appendChild(contentDiv);
+        this.elements.messagesContainer.appendChild(messageDiv);
+        this.elements.messagesContainer.scrollTop = this.elements.messagesContainer.scrollHeight;
+    }
+
+    showStatus(text, duration = 0, className = '') {
+        this.elements.status.textContent = text;
+        this.elements.status.className = 'ai-status ' + className;
+        if (duration > 0) {
+            setTimeout(() => this.hideStatus(), duration);
+        }
+    }
+
+    hideStatus() {
+        this.elements.status.textContent = '';
+        this.elements.status.className = 'ai-status';
+    }
+
+    async getAIResponse() {
+        if (this.isLocalMode) {
+            return await this.getAIResponseDirect();
+        } else {
+            return await this.getAIResponseProxy();
+        }
+    }
+
+    async getAIResponseDirect() {
+        // Проверяем, открыт ли файл локально через file://
+        if (window.location.protocol === 'file:') {
+            // Используем тестовые ответы для демонстрации
+            return this.getTestResponse();
+        }
+
+        const url = 'https://openrouter.ai/api/v1/chat/completions';
+        const body = {
             model: this.MODEL,
             messages: [
                 { role: 'system', content: this.SYSTEM_PROMPT },
-                ...conversationHistory,
-                { role: 'user', content: message }
+                ...this.messages.slice(-10)
             ],
+            temperature: 0.7,
             max_tokens: 1000
         };
 
         try {
-            let response;
-            
-            if (this.isLocalMode) {
-                // Локальный режим - прямой запрос к OpenRouter
-                response = await this.makeDirectAPIRequest(payload);
-            } else {
-                // Серверный режим - запрос через наш API
-                response = await this.makeServerAPIRequest(payload);
-            }
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${this.OPENROUTER_API_KEY}`,
+                    'Content-Type': 'application/json',
+                    'HTTP-Referer': this.SITE_URL,
+                    'X-Title': 'Crona - Уход за деревьями'
+                },
+                body: JSON.stringify(body)
+            });
 
             if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                const errorText = await response.text();
+                throw new Error(`HTTP ${response.status}: ${errorText}`);
             }
 
             const data = await response.json();
+            return data.choices[0].message.content;
             
-            if (data.error) {
-                throw new Error(data.error.message || 'API Error');
-            }
-
-            return data.choices[0]?.message?.content || 'Извините, не удалось получить ответ.';
         } catch (error) {
-            console.error('AI Assistant: Ошибка при получении ответа:', error);
+            if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                throw new Error('Ошибка сети или CORS. Попробуйте открыть через localhost.');
+            }
             throw error;
         }
     }
 
-    async makeDirectAPIRequest(payload) {
-        const url = 'https://openrouter.ai/api/v1/chat/completions';
+    getTestResponse() {
+        const userMessage = this.messages[this.messages.length - 1].content.toLowerCase();
         
+        // Простые ответы на основе ключевых слов
+        if (userMessage.includes('цена') || userMessage.includes('стоимость') || userMessage.includes('сколько')) {
+            return 'Стоимость удаления деревьев зависит от сложности работ:\n\n• Минимальная сложность: от 8000₽ до 12000₽\n• Средняя сложность: от 12000₽ до 18000₽\n• Высокая сложность: от 18000₽\n\nМинимальный заказ - 12000₽. Выезд специалиста для оценки - бесплатно!\n\nЗвоните: +7 (953) 372-53-87';
+        }
+        
+        if (userMessage.includes('удаление') || userMessage.includes('спил') || userMessage.includes('срубить')) {
+            return 'Мы выполняем безопасное удаление деревьев частями в СПб и ЛО. Это самый безопасный метод, исключающий риски повреждения инфраструктуры.\n\nВ стоимость входит:\n• Распил ствола на части по 35-40см\n• Распил ветвей на части по 1,5м\n• Перенос и складирование в радиусе 50м\n\nМинимальный заказ: 12000₽\nТелефон: +7 (953) 372-53-87';
+        }
+        
+        if (userMessage.includes('контакт') || userMessage.includes('телефон') || userMessage.includes('связаться')) {
+            return 'Свяжитесь с нами удобным способом:\n\n📞 Телефоны:\n+7 (953) 372-53-87\n+7 (812) 960-55-20\n\n📧 Email: E-mail@crona-spb.com\n\n💬 Telegram: @cronaSpb\n🤖 Telegram-Bot: @CronaSPb_Bot\n\nРаботаем в СПб и Ленинградской области!';
+        }
+        
+        if (userMessage.includes('привет') || userMessage.includes('здравствуй')) {
+            return 'Здравствуйте! Я ИИ-ассистент компании Crona. Мы специализируемся на профессиональном удалении деревьев в СПб и ЛО.\n\nЧем могу помочь? Могу рассказать о:\n• Ценах и услугах\n• Методах удаления\n• Контактах для заказа\n\nЗадайте ваш вопрос!';
+        }
+        
+        // Общий ответ
+        return 'Спасибо за ваш вопрос! Компания Crona предоставляет профессиональные услуги по удалению деревьев в СПб и ЛО.\n\nМинимальный заказ: 12000₽\nВыезд специалиста: бесплатно\n\nДля точной оценки стоимости и консультации звоните:\n+7 (953) 372-53-87\n+7 (812) 960-55-20\n\n⚠️ ДЕМО-РЕЖИМ: Сейчас работают тестовые ответы. Для полноценной работы ИИ загрузите страницу на сайт crona-spb.com';
+    }
+
+    async getAIResponseProxy() {
+        const url = 'api.php';
+        const body = {
+            model: this.MODEL,
+            messages: [
+                { role: 'system', content: this.SYSTEM_PROMPT },
+                ...this.messages.slice(-10)
+            ],
+            temperature: 0.7,
+            max_tokens: 1000
+        };
+
         const response = await fetch(url, {
             method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${this.OPENROUTER_API_KEY}`,
-                'Content-Type': 'application/json',
-                'HTTP-Referer': this.SITE_URL,
-                'X-Title': 'Лесной код Crona'
-            },
-            body: JSON.stringify(payload)
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
         });
-
-        console.log('AI Assistant: Ответ получен, статус:', response.status);
 
         if (!response.ok) {
             const errorText = await response.text();
-            console.error('AI Assistant: Ошибка API:', response.status, errorText);
-            throw new Error(`HTTP ${response.status}: ${errorText}`);
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
 
-        return response;
-    }
-
-    async makeServerAPIRequest(payload) {
-        const response = await fetch('api.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-
-        console.log('AI Assistant: Ответ от сервера получен, статус:', response.status);
-        return response;
-    }
-
-    addMessage(role, content) {
-        const messagesContainer = document.getElementById('ai-assistant-messages');
-        const messageElement = document.createElement('div');
-        messageElement.className = `ai-assistant-message ai-assistant-${role}`;
-        
-        const avatar = role === 'user' ? '👤' : '🌲';
-        const label = role === 'user' ? 'Вы' : 'ИИ-Ассистент';
-        
-        messageElement.innerHTML = `
-            <div class="ai-assistant-message-header">
-                <span class="ai-assistant-message-avatar">${avatar}</span>
-                <span class="ai-assistant-message-label">${label}</span>
-                <span class="ai-assistant-message-time">${new Date().toLocaleTimeString()}</span>
-            </div>
-            <div class="ai-assistant-message-content">${this.formatMessage(content)}</div>
-        `;
-        
-        messagesContainer.appendChild(messageElement);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        
-        // Сохраняем в историю
-        this.saveMessageToHistory(role, content);
-    }
-
-    formatMessage(content) {
-        // Форматируем сообщения: переносы строк, списки, жирный текст
-        return content
-            .replace(/\n/g, '<br>')
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            .replace(/^- (.*$)/gm, '<li>$1</li>')
-            .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-    }
-
-    showLoading() {
-        document.getElementById('ai-assistant-loading').style.display = 'flex';
-    }
-
-    hideLoading() {
-        document.getElementById('ai-assistant-loading').style.display = 'none';
-    }
-
-    getConversationHistory() {
-        const history = localStorage.getItem('ai-assistant-history') || '[]';
-        return JSON.parse(history).slice(-10); // Последние 10 сообщений
-    }
-
-    saveMessageToHistory(role, content) {
-        const history = this.getConversationHistory();
-        history.push({ role, content, timestamp: Date.now() });
-        
-        // Сохраняем только последние 20 сообщений
-        const trimmedHistory = history.slice(-20);
-        localStorage.setItem('ai-assistant-history', JSON.stringify(trimmedHistory));
-    }
-
-    loadConversationHistory() {
-        const history = this.getConversationHistory();
-        const messagesContainer = document.getElementById('ai-assistant-messages');
-        
-        if (history.length === 0) {
-            // Приветственное сообщение
-            this.addMessage('assistant', '🌲 Здравствуйте! Я ИИ-ассистент Лесного кода от Crona. Могу помочь с вопросами по уходу за лесными растениями, кронированию деревьев, посадке и другим услугам. Чем могу помочь?');
-        } else {
-            // Загружаем последние сообщения
-            history.slice(-5).forEach(msg => {
-                this.addMessage(msg.role, msg.content);
-            });
-        }
-    }
-
-    toggleVoiceInput() {
-        if (!this.recognition) {
-            this.initVoiceRecognition();
+        const data = await response.json();
+        if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+            throw new Error('Некорректный ответ от API');
         }
         
-        if (this.isRecording) {
-            this.stopRecording();
-        } else {
-            this.startRecording();
-        }
+        return data.choices[0].message.content;
     }
 
-    initVoiceRecognition() {
+    initSpeechRecognition() {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            this.elements.voiceInputBtn.style.display = 'none';
+            return;
+        }
+
         this.recognition = new SpeechRecognition();
-        
         this.recognition.lang = 'ru-RU';
         this.recognition.continuous = false;
         this.recognition.interimResults = false;
-        
+
+        this.recognition.onstart = () => {
+            this.isRecording = true;
+            this.elements.voiceInputBtn.classList.add('ai-recording');
+            this.showStatus('Слушаю... Говорите', 0, 'ai-listening');
+        };
+
         this.recognition.onresult = (event) => {
             const transcript = event.results[0][0].transcript;
-            document.getElementById('ai-assistant-input').value = transcript;
-            this.stopRecording();
+            this.elements.input.value = transcript;
+            this.lastMessageWasVoice = true;
+            this.sendMessage();
         };
-        
+
         this.recognition.onerror = (event) => {
-            console.error('Voice recognition error:', event.error);
+            console.error('Speech Recognition Error:', event.error);
             this.stopRecording();
+            this.showStatus('Ошибка распознавания. Попробуйте снова.', 3000);
         };
-        
+
         this.recognition.onend = () => {
             this.stopRecording();
         };
     }
 
-    startRecording() {
+    toggleVoiceInput() {
         if (!this.recognition) {
-            this.initVoiceRecognition();
+            this.showStatus('Голосовой ввод не поддерживается', 3000);
+            return;
         }
-        
-        this.isRecording = true;
-        this.recognition.start();
-        
-        const voiceBtn = document.getElementById('ai-assistant-voice');
-        voiceBtn.textContent = '🔴';
-        voiceBtn.classList.add('recording');
+
+        if (this.isRecording) {
+            this.stopRecording();
+        } else {
+            try {
+                this.recognition.start();
+            } catch (e) {
+                this.showStatus('Не удалось запустить распознавание речи', 3000);
+            }
+        }
     }
 
     stopRecording() {
         if (this.recognition && this.isRecording) {
             this.recognition.stop();
         }
-        
         this.isRecording = false;
+        this.elements.voiceInputBtn.classList.remove('ai-recording');
+        this.hideStatus();
+    }
+
+    toggleVoiceOutput() {
+        this.isVoiceEnabled = !this.isVoiceEnabled;
+        if (this.isVoiceEnabled) {
+            this.elements.voiceToggle.classList.add('ai-active');
+            this.elements.voiceToggle.title = 'Голосовой режим включен';
+            this.showStatus('Голосовой режим включен', 2000);
+        } else {
+            this.elements.voiceToggle.classList.remove('ai-active');
+            this.elements.voiceToggle.title = 'Голосовой режим выключен';
+            this.stopSpeaking();
+            this.showStatus('Голосовой режим выключен', 2000);
+        }
+    }
+
+    speak(text) {
+        if (!this.synthesis) return;
+        this.stopSpeaking();
+        const cleanText = text.replace(/[#*_`\[\]\(\)]/g, '').replace(/\s+/g, ' ').trim();
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.lang = 'ru-RU';
+        utterance.rate = 1;
+        utterance.pitch = 1;
         
-        const voiceBtn = document.getElementById('ai-assistant-voice');
-        voiceBtn.textContent = '🎤';
-        voiceBtn.classList.remove('recording');
+        utterance.onstart = () => {
+            this.showStatus('Ассистент говорит...', 0, 'ai-speaking');
+        };
+        
+        utterance.onend = () => {
+            this.hideStatus();
+        };
+        
+        const voices = this.synthesis.getVoices();
+        const russianVoice = voices.find(v => v.lang.startsWith('ru'));
+        if (russianVoice) {
+            utterance.voice = russianVoice;
+        }
+        
+        this.synthesis.speak(utterance);
+    }
+
+    stopSpeaking() {
+        if (this.synthesis) {
+            this.synthesis.cancel();
+        }
+    }
+
+    checkApiKey() {
+        if (this.isLocalMode && (!this.OPENROUTER_API_KEY || this.OPENROUTER_API_KEY === 'sk-or-v1-YOUR_API_KEY_HERE')) {
+            console.warn('AI Assistant: Необходимо указать API ключ OpenRouter');
+            this.showStatus('⚠️ API ключ не настроен', 5000);
+        }
     }
 }
 
-// Инициализация ассистента при загрузке страницы
+if (window.speechSynthesis) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    new AIAssistant();
+    window.aiAssistant = new AIAssistant();
 });

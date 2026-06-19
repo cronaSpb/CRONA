@@ -3,7 +3,7 @@
 
 var b = document.body || document.getElementsByTagName('body')[0];
 
-b.insertAdjacentHTML('beforeend', '<button onclick="topFunction()" id="toTop" title="Вверх"><img src="img/c60.png" width="40px"></button>');
+b.insertAdjacentHTML('beforeend', '<button onclick="topFunction()" id="toTop" title="Вверх"><img src="img/200.png" width="40px"></button>');
 
 
 document.getElementById("toTop").setAttribute("style", "display: block; position: fixed; bottom: 18px; right: 18px; z-index: 1000; border: none; outline: none; background: none; cursor: pointer;");
