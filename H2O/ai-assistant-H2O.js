@@ -2,10 +2,11 @@
 class AIAssistant {
     constructor() {
         this.isLocalMode = window.location.protocol === 'file:';
-        this.OPENROUTER_API_KEY = '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';
-        this.MODEL = 'anthropic/claude-3.5-haiku';
+        // Загружаем конфигурацию из config.js (защищен .gitignore)
+        this.OPENROUTER_API_KEY = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.OPENROUTER_API_KEY : '';
+        this.MODEL = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.MODEL : 'anthropic/claude-3.5-haiku';
         this.SITE_URL = window.location.origin;
-        this.SITE_NAME = 'Crona - Уход за деревьями';
+        this.SITE_NAME = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.SITE_NAME : 'Crona - H2O';
         
         // Универсальный промпт для всех страниц
         this.SYSTEM_PROMPT = `Вы - ИИ-ассистент компании Crona, профессиональной арбористической компании, специализирующейся на уходе за деревьями, водными растениями и водоёмами в Санкт-Петербурге и Ленинградской области.

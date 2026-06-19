@@ -1,11 +1,13 @@
 // Универсальный ИИ-ассистент CRONA_AI для всех страниц cronа-spb.com
 class AIAssistant {
     constructor() {
-        this.isLocalMode = window.location.protocol === 'file:';
-        this.OPENROUTER_API_KEY = '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';
-        this.MODEL = 'anthropic/claude-3.5-haiku';
+        // Временно всегда используем прямой режим для тестирования
+        this.isLocalMode = true;
+        // Загружаем конфигурацию из config.js (защищен .gitignore)
+        this.OPENROUTER_API_KEY = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.OPENROUTER_API_KEY : '';
+        this.MODEL = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.MODEL : 'anthropic/claude-3.5-haiku';
         this.SITE_URL = window.location.origin;
-        this.SITE_NAME = 'Crona - Уход за деревьями';
+        this.SITE_NAME = typeof AI_CONFIG !== 'undefined' ? AI_CONFIG.SITE_NAME : 'Crona - Уход за деревьями';
         
         // Универсальный промпт для всех страниц
         this.SYSTEM_PROMPT = `Вы - ИИ-ассистент компании Crona, профессиональной арбористической компании, специализирующейся на уходе за деревьями в Санкт-Петербурге и Ленинградской области.
@@ -170,7 +172,18 @@ class AIAssistant {
         } catch (error) {
             this.hideStatus();
             console.error('AI Assistant Error:', error);
-            this.addMessageToUI('bot', 'Извините, произошла ошибка. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону: +7 (953) 372-53-87');
+            console.error('Error details:', error.message);
+            console.error('Current mode:', this.isLocalMode ? 'Local (file://)' : 'Server (http://)');
+            
+            let errorMessage = 'Извините, произошла ошибка. ';
+            if (this.isLocalMode) {
+                errorMessage += 'Для работы ИИ ассистента запустите локальный сервер через start-server.bat. ';
+            } else {
+                errorMessage += 'Проверьте консоль браузера (F12) для деталей. ';
+            }
+            errorMessage += 'Или свяжитесь с нами по телефону: +7 (953) 372-53-87';
+            
+            this.addMessageToUI('bot', errorMessage);
         }
     }
 
@@ -207,6 +220,12 @@ class AIAssistant {
     }
 
     async getAIResponseDirect() {
+        // Проверяем, открыт ли файл локально через file://
+        if (window.location.protocol === 'file:') {
+            // Используем тестовые ответы для демонстрации
+            return this.getTestResponse();
+        }
+
         const url = 'https://openrouter.ai/api/v1/chat/completions';
         const body = {
             model: this.MODEL,
@@ -244,6 +263,30 @@ class AIAssistant {
             }
             throw error;
         }
+    }
+
+    getTestResponse() {
+        const userMessage = this.messages[this.messages.length - 1].content.toLowerCase();
+        
+        // Простые ответы на основе ключевых слов
+        if (userMessage.includes('цена') || userMessage.includes('стоимость') || userMessage.includes('сколько')) {
+            return 'Стоимость удаления деревьев зависит от сложности работ:\n\n• Минимальная сложность: от 8000₽ до 12000₽\n• Средняя сложность: от 12000₽ до 18000₽\n• Высокая сложность: от 18000₽\n\nМинимальный заказ - 12000₽. Выезд специалиста для оценки - бесплатно!\n\nЗвоните: +7 (953) 372-53-87';
+        }
+        
+        if (userMessage.includes('удаление') || userMessage.includes('спил') || userMessage.includes('срубить')) {
+            return 'Мы выполняем безопасное удаление деревьев частями в СПб и ЛО. Это самый безопасный метод, исключающий риски повреждения инфраструктуры.\n\nВ стоимость входит:\n• Распил ствола на части по 35-40см\n• Распил ветвей на части по 1,5м\n• Перенос и складирование в радиусе 50м\n\nМинимальный заказ: 12000₽\nТелефон: +7 (953) 372-53-87';
+        }
+        
+        if (userMessage.includes('контакт') || userMessage.includes('телефон') || userMessage.includes('связаться')) {
+            return 'Свяжитесь с нами удобным способом:\n\n📞 Телефоны:\n+7 (953) 372-53-87\n+7 (812) 960-55-20\n\n📧 Email: E-mail@crona-spb.com\n\n💬 Telegram: @cronaSpb\n🤖 Telegram-Bot: @CronaSPb_Bot\n\nРаботаем в СПб и Ленинградской области!';
+        }
+        
+        if (userMessage.includes('привет') || userMessage.includes('здравствуй')) {
+            return 'Здравствуйте! Я ИИ-ассистент компании Crona. Мы специализируемся на профессиональном удалении деревьев в СПб и ЛО.\n\nЧем могу помочь? Могу рассказать о:\n• Ценах и услугах\n• Методах удаления\n• Контактах для заказа\n\nЗадайте ваш вопрос!';
+        }
+        
+        // Общий ответ
+        return 'Спасибо за ваш вопрос! Компания Crona предоставляет профессиональные услуги по удалению деревьев в СПб и ЛО.\n\nМинимальный заказ: 12000₽\nВыезд специалиста: бесплатно\n\nДля точной оценки стоимости и консультации звоните:\n+7 (953) 372-53-87\n+7 (812) 960-55-20\n\n⚠️ ДЕМО-РЕЖИМ: Сейчас работают тестовые ответы. Для полноценной работы ИИ загрузите страницу на сайт crona-spb.com';
     }
 
     async getAIResponseProxy() {

@@ -1,3 +1,148 @@
+/* =========================================
+   СТИЛИ ФУТЕРА (из udalenie-derevev)
+   ========================================= */
+footer[role="contentinfo"] {
+    background-color: #193c6d !important;
+    border-top: 2px solid #CAE329 !important;
+    color: #000 !important;
+    width: 100% !important;
+}
+
+footer[role="contentinfo"] .container {
+    min-height: 540px !important;
+    height: auto !important;
+    max-height: none !important;
+    padding-top: 10px !important;
+    padding-bottom: 70px !important;
+    background: linear-gradient(135deg, #003073, #029797) !important;
+    background-size: cover !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+footer[role="contentinfo"] .aria-label {
+    float: none !important;
+    text-decoration: none !important;
+}
+
+footer[role="contentinfo"] .footer-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    padding: 0 15px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+footer[role="contentinfo"] .footer-content section {
+    flex: 1 1 250px !important;
+    min-width: 220px !important;
+    margin: 0 15px !important;
+    padding: 0 !important;
+    text-align: left !important;
+    background: transparent !important;
+}
+
+footer[role="contentinfo"] .footer-content h3 {
+    color: #000 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    text-transform: uppercase !important;
+}
+
+footer[role="contentinfo"] .footer-content p {
+    color: #000 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+footer[role="contentinfo"] .footer-content strong {
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+footer[role="contentinfo"] .footer-content a {
+    color: #0000FF !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    text-decoration: underline !important;
+}
+
+footer[role="contentinfo"] .footer-content a:hover,
+footer[role="contentinfo"] .aria-label ul li a:hover,
+footer[role="contentinfo"] .footer-bottom a:hover {
+    color: #4B0082 !important;
+}
+
+footer[role="contentinfo"] .footer-bottom {
+    border-top: 1px solid rgba(202, 227, 41, 0.3) !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+}
+
+footer[role="contentinfo"] .footer-bottom p {
+    color: #4B0082 !important;
+    font-size: 16px !important;
+}
+
+footer[role="contentinfo"] .footer-bottom a {
+    color: #4B0082 !important;
+    font-size: 16px !important;
+    text-decoration: underline !important;
+}
+
+footer[role="contentinfo"] .aria-label ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li {
+    display: inline-block !important;
+    margin-right: 20px !important;
+}
+
+footer[role="contentinfo"] .footer-services ul {
+    list-style: none !important;
+    padding-left: 20px !important;
+    margin: 0 !important;
+}
+
+footer[role="contentinfo"] .footer-services ul li {
+    margin-bottom: 8px !important;
+    color: #000 !important;
+    list-style: none !important;
+    position: relative !important;
+    padding-left: 0 !important;
+}
+
+footer[role="contentinfo"] .footer-services ul li::before {
+    content: "\2022" !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    display: inline-block !important;
+    width: 1em !important;
+    margin-left: -1em !important;
+    position: absolute !important;
+    left: 0 !important;
+    font-size: 1.5em !important;
+    line-height: 1 !important;
+}
+
+footer[role="contentinfo"] .footer-services ul li a {
+    display: inline !important;
+}
+
+footer ul {
+    padding-left: 20px !important;
+}
+
+/* =========================================
+   ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ
+   ========================================= */
 body {
 	font-family: COMIC SANS MS;
 	padding: 0;
@@ -594,6 +739,10 @@ ul {
 	display: none;
 }
 
+.none1608-mobile {
+	display: none;
+}
+
 
 .none1608 h2 {
 	color: #000;
@@ -605,7 +754,7 @@ ul {
 }
 
 .none1608 p {
-	color: #000;
+	color: #fff;
 	text-align: left;
 	font-size: 16px;
 	margin-left: 20px;
@@ -635,14 +784,14 @@ ul {
 .title1608 {
 	padding-top: 60px;
 	margin-bottom: 70px;
-	margin-left: 450px;
+	text-align: center;
 	display: none;
 
 }
 
 .title1608 h2 {
 	color: #6A6E68;
-	font-family: SANS-SERIF;
+	font-family: COMIC SANS MS;
 	font-style: 40;
 	font-weight: bold;
 	text-align: center;
@@ -655,7 +804,7 @@ ul {
 	text-align: center;
 	font-size: 16px;
 	margin-top: 50px;
-	margin-left: -115px;
+	margin-left: 0;
 }
 
 /* .footer1{
@@ -827,9 +976,10 @@ header nav {
 }
 
 .title1608 {
-	display: flex;
+	display: block;
+	text-align: center;
+	margin-left: 0;
 }
-
 
 .title {
 		display: none;
@@ -897,13 +1047,14 @@ header .container {
 }	
 
 #universal {
-	height: 600px;
+	height: 800px;
 	width: 900px;
 	
 }
 
 .title1608 {
-    margin-left: 350px;
+    text-align: center;
+	margin-left: 0;
 }
 
 .universal_item {
@@ -989,7 +1140,7 @@ ul {
 }
 
 #universal {
-	height: 700px;
+	height: 1100px;
 	width: 600px;
 }
 
@@ -998,13 +1149,37 @@ header nav {
 }
 
 .none1608 {
-    margin-left: 300px;
-    margin-right: 0;
-    margin-top: 10px;
+    display: none !important;
+}
+
+.none1608-mobile {
+    display: block;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.none1608-mobile h2 {
+    font-style: 40;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    color: #000;
+}
+
+.none1608-mobile p {
+    color: #000;
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .title1608 {
-    margin-left: 210px;
+    text-align: center;
+	margin-left: 0;
 }
 
 .universal_item {
@@ -1083,7 +1258,7 @@ header nav {
 }    
 
 #universal {
-	height: 900px;
+	height: 1300px;
 	width: 310px;
 	
 }
@@ -1093,8 +1268,13 @@ header nav {
     display: none;
 }
 
+.none1608-mobile {
+    display: none;
+}
+
 .title1608 {
-    margin-left: 65px;
+    text-align: center;
+	margin-left: 0;
 }
 
 .universal_item {
@@ -1289,8 +1469,13 @@ footer .aria-label {
 
 /* Убираем черные точки из списка услуг в футере */
 .footer-services ul {
-    list-style: none;
+    list-style: disc;
     margin: 0;
+    padding-left: 20px;
+}
+
+.footer-services ul li {
+    margin-bottom: 8px;
 }
 
 /* Убираем точки из списка навигации в футере */
@@ -1303,6 +1488,26 @@ footer .aria-label ul {
 footer .aria-label ul li {
     display: inline;
     margin-right: 20px;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    color: #4B0082;
+    margin-bottom: 15px;
+}
+
+.footer-bottom nav ul li a {
+    color: #4B0082;
+    text-decoration: none;
+}
+
+.footer-bottom nav ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Адаптивность футера из Bio+ */
@@ -1321,6 +1526,18 @@ footer .aria-label ul li {
 @media (max-width: 768px) {
     footer .container {
         padding: 20px 10px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    footer .container {
+        padding: 0 20px 70px 20px;
+    }
+    
+    @media (max-width: 768px) {
+        footer[role="contentinfo"] .container {
+            padding: 70px 10px !important;
+        }
     }
 }
 
@@ -1602,14 +1819,14 @@ footer .aria-label ul li {
 }
 
 .ai-status.ai-listening::before {
-    content: '🎤 ';
+    content: ' ';
 }
 
 /* Адаптивность для мобильных устройств */
 @media (max-width: 480px) {
     .ai-widget {
         bottom: 10px;
-        right: 10px;
+        right: 80px;
     }
 
     .ai-chat-container {

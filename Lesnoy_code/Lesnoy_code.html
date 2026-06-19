@@ -167,12 +167,34 @@
 	}
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="Lesnoy_code.css?v=1.3">
+	<link rel="stylesheet" type="text/css" href="Lesnoy_code.css?v=20260404">
 	<link rel="stylesheet" href="scc/animate.css">
 	<script src="js/wow.min.js"></script>
 	
 	<!-- ПРИОРИТЕТНЫЕ СТИЛИ ДЛЯ МОДАЛЬНЫХ ОКОН -->
 	<style>
+	/* СТИЛИ ФУТЕРА - МАКСИМАЛЬНЫЙ ПРИОРИТЕТ */
+	footer[role="contentinfo"] .footer-content {
+		padding: 0 15px !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	
+	footer[role="contentinfo"] .footer-content section {
+		padding: 0 !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	
+	footer[role="contentinfo"] .footer-about,
+	footer[role="contentinfo"] .footer-services,
+	footer[role="contentinfo"] .footer-contact,
+	footer[role="contentinfo"] .footer-region {
+		padding: 0 !important;
+	}
+	
 	.mod_click1 .mod-wrapper1,
 	.mod_click2 .mod-wrapper2,
 	.mod_click3 .mod-wrapper3 {
@@ -313,7 +335,7 @@
 				<div class="title">
 					<div class="white">
 						<h2>
-							Экосистема лесного типа
+							Лесной код
 					    </h2>
 					    <p class="whiteP">
 						<span> посадка/пересадка 
@@ -577,12 +599,19 @@
 						<p>
 							<strong>Email:</strong><br>
 							<a href="mailto:E-mail@crona-spb.com">E-mail@crona-spb.com</a><br><br>
-							<strong>Telegram-Bot:</strong><br>
-							<a href="https://t.me/cronaSpb" target="_blank" rel="noopener noreferrer" style="margin-left: 10px;">
-								<img src="img/tg.png" alt="Telegram" style="width: 24px; height: 24px; vertical-align: middle;">
+							<strong>Telegram:</strong><br>
+							<a href="https://t.me/cronaSpb" target="_blank" rel="noopener noreferrer" style="margin-left: 10px; display: inline-flex; align-items: center; gap: 5px;">
+								<img src="img/tg.png" alt="Telegram" style="width: 24px; height: 24px;">
+								<span>@cronaSpb</span>
 							</a>
-							<a href="https://t.me/CronaSPb_Bot" target="_blank" rel="noopener noreferrer" style="margin-left: 5px;">
-								<img src="img/Bot.png" alt="Telegram Bot" style="width: 24px; height: 24px; vertical-align: middle;">
+							<a href="https://t.me/CronaSPb_Bot" target="_blank" rel="noopener noreferrer" style="margin-left: 10px; display: inline-flex; align-items: center; gap: 5px;">
+								<img src="img/Bot.png" alt="Telegram Bot" style="width: 24px; height: 24px;">
+								<span>@CronaSPb_Bot</span>
+							</a><br><br>
+							<strong>Мессенджер CRONA:</strong><br>
+							<a href="https://crona.online" target="_blank" rel="noopener noreferrer" style="margin-left: 10px; display: inline-flex; align-items: center; gap: 5px;">
+								<img src="img/crona-messenger.png" alt="CRONA Messenger" style="width: 24px; height: 24px; filter: brightness(0);">
+								<span>https://crona.online</span>
 							</a>
 						</p>
 					</section>
@@ -741,6 +770,7 @@
 		</div>
 	</div>
 
-	<script src="ai-assistant.js"></script>
+	<script src="config.js"></script>
+	<script src="ai-assistant-Lesnoy_code.js?v=4"></script>
 </body>
 </html>
