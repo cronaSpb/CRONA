@@ -172,7 +172,7 @@ label {
 }
 
 header {
- 	background: url(../img/pines1-3.jpg) no-repeat center top / cover;
+ 	background: url(img/pines1-3.jpg) no-repeat center top / cover;
  }
  
  .container {
@@ -833,7 +833,7 @@ header {
 }
 
 footer {
-	background: url(../img/70_3.jpg) no-repeat center top / cover;
+	background: url(img/70_3.jpg) no-repeat center top / cover;
 	padding-bottom: 85px;
 	height: 95px;
 }

@@ -1,3 +1,166 @@
+/* Футер полностью как в Lesnoy_code */
+footer[role="contentinfo"] {
+    background-color: #193c6d !important;
+    border-top: 2px solid #CAE329 !important;
+    color: #000 !important;
+    width: 100% !important;
+}
+
+footer[role="contentinfo"] .container {
+    min-height: 540px !important;
+    height: auto !important;
+    max-height: none !important;
+    padding-top: 10px !important;
+    /* padding-bottom: 70px !important; */
+    background: linear-gradient(135deg, #003073, #029797) !important;
+    background-size: cover !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+footer[role="contentinfo"] .aria-label {
+    float: none !important;
+    text-decoration: none !important;
+}
+
+footer[role="contentinfo"] .footer-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    padding: 0 15px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+footer[role="contentinfo"] .footer-content section {
+    flex: 1 1 250px !important;
+    min-width: 220px !important;
+    margin: 0 15px !important;
+    padding: 0 !important;
+    text-align: left !important;
+    background: transparent !important;
+}
+
+footer[role="contentinfo"] .footer-content h3 {
+    color: #000 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    text-transform: uppercase !important;
+}
+
+footer[role="contentinfo"] .footer-content p {
+    color: #000 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+footer[role="contentinfo"] .footer-content strong {
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+footer[role="contentinfo"] .footer-content a {
+    color: #0000FF !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    text-decoration: underline !important;
+}
+
+footer[role="contentinfo"] .footer-content a:hover,
+footer[role="contentinfo"] .aria-label ul li a:hover,
+footer[role="contentinfo"] .footer-bottom a:hover {
+    color: #4B0082 !important;
+}
+
+footer[role="contentinfo"] .footer-bottom {
+    border-top: 1px solid rgba(202, 227, 41, 0.3) !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+}
+
+footer[role="contentinfo"] .footer-bottom p {
+    color: #4B0082 !important;
+    font-size: 16px !important;
+}
+
+footer[role="contentinfo"] .footer-bottom a {
+    color: #4B0082 !important;
+    font-size: 16px !important;
+    text-decoration: underline !important;
+}
+
+footer[role="contentinfo"] .aria-label ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li {
+    display: inline-block !important;
+    margin-right: 20px !important;
+}
+
+footer ul {
+    padding-left: 20px !important;
+}
+
+@media (max-width: 899px) {
+    footer[role="contentinfo"] .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+    }
+
+    footer[role="contentinfo"] .footer-content section {
+        margin-bottom: 30px !important;
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 600px !important;
+        flex: 0 0 auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    footer[role="contentinfo"] .container {
+        padding: 20px 10px !important;
+    }
+
+    footer[role="contentinfo"] .footer-content h3 {
+        font-size: 16px !important;
+    }
+
+    footer[role="contentinfo"] .footer-content p,
+    footer[role="contentinfo"] .footer-bottom p,
+    footer[role="contentinfo"] .aria-label ul li a {
+        font-size: 14px !important;
+    }
+
+    footer[role="contentinfo"] .container {
+    padding-bottom: 70px !important;
+    }
+
+}
+
+
+/* Стили для контента футера */
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+footer .footer-content section {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background: transparent !important;
+}
+
 body {
 	background: #CAE329;
 	font-family: COMIC SANS MS;
@@ -5,6 +168,31 @@ body {
 	margin: 0;
 	color: #000;
 	text-align: justify;
+}
+
+/* ОБЩИЕ СТИЛИ ДЛЯ ВСЕГО САЙТА КАК В LESNOY_CODE */
+h3 {
+    color: #CAE329;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+p {
+    color: #000;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #CAE329;
 }
 
 .logo{
@@ -19,13 +207,40 @@ body {
 	clear: both;
 }
 
+/* Медиа-запросы для футера */
+@media (max-width: 768px) {
+    footer .container {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    footer p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+    }
+
+    footer .footer-content section {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    footer .container {
+        padding: 20px 10px;
+    }
+}
+
 .container {
 	max-width: 1140px;
 	margin: 0 auto;
 }
 
 header {	
-	background: url(../img/M_geuJ690QE.jpg )  no-repeat center top / cover;
+	background: url(img/M_geuJ690QE.jpg)  no-repeat center top / cover;
 	padding-bottom: 760px;
 	opacity: 100;
 }
@@ -248,6 +463,7 @@ label {
 	text-align: justify;
 	display: block;
 	line-height: 1.8em;
+	color: #fff;
 }
 
 /*.services { */
@@ -256,7 +472,7 @@ label {
 /*}*/
 
 .sliderIm {
-	background: url(../img/3HirQux6wxw.jpg )  no-repeat center top / cover;
+	background: url(img/3HirQux6wxw.jpg)  no-repeat center top / cover;
     box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 	float: right ;
 	width: 880px;
@@ -344,58 +560,6 @@ label {
 	opacity: 0.7;
 }
 
-footer{
-	background: url(../img/70_3.jpg) no-repeat center top / cover;
-	
-}
-
-footer .container_2 {
-	height: 0 auto;
-
-}
-
-footer .im {
-	margin-top: 10px;
-	margin-right: 0px;
-	margin-bottom: 36px;
-	border-top: 7px solid #fff;
-}
-
-footer .gmail {
-	margin-top: 20px;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-
-footer .im:hover {
-	background: #fff
-}
-
-.foot {
-	padding-top: 20px;
-	margin-top: 20px;
-	margin-left: 350px;
-}
-
-footer:hover {
-	opacity: 100;
-}
-
-footer .container_2 {
-	width: 0 auto;
-}
-
-footer .info {
-	margin-top: 0px;
-	font-family: Arial;
-	margin-right: 20px;
-}
-
-footer .copirait {
-	margin-right: 50px;
-	margin-top: 20px;
-	font-family: Arial;
-}
 
 @media screen and (max-width: 1639px) {
 
@@ -843,6 +1007,278 @@ footer img {
 
 }
 
+/* ===========================================
+   СТИЛИ ФУТЕРА (из Lesnoy_code)
+   =========================================== */
+
+footer[role="contentinfo"] .container {
+	min-height: 540px !important;
+	border-top: 2px solid #CAE329 !important;
+	background-color: #193c6d !important;
+    filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797') !important;
+    background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg) !important;
+    background-size: 100% !important;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797)) !important;
+    background-image: -webkit-linear-gradient(135deg, #003073, #029797) !important;
+    background-image: -moz-linear-gradient(45deg, #003073, #029797) !important;
+    background-image: -ms-linear-gradient(45deg, #003073 0, #029797 100%) !important;
+    background-image: -o-linear-gradient(45deg, #003073, #029797) !important;
+    background-image: linear-gradient(135deg, #003073, #029797) !important;
+    text-align: center !important;
+    margin: 0px !important;
+    overflow: hidden !important;
+    max-width: none !important; /* Отключаем ограничение ширины */
+    /* width: 100% !important;  */
+    /* Разворачиваем на полную ширину */
+    padding-top: 10px !important; /* Внутренний отступ сверху 10px */
+}
+
+footer[role="contentinfo"] .aria-label {
+    float: none !important;
+    text-decoration: none !important;
+}
+
+/* Структура футера */
+footer[role="contentinfo"] .footer-content {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    padding: 0 !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+footer[role="contentinfo"] .footer-content section {
+    flex: 1 !important;
+    min-width: 250px !important;
+    margin: 0 15px !important;
+    padding: 0 !important;
+    text-align: left !important;
+    background: transparent !important;
+}
+
+footer[role="contentinfo"] .footer-content h3 {
+    color: #000 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin-bottom: 15px !important;
+    text-transform: uppercase !important;
+}
+
+footer[role="contentinfo"] .footer-content p {
+    color: #fff !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 10px !important;
+}
+
+footer[role="contentinfo"] .footer-content a {
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+footer[role="contentinfo"] .footer-content a:hover {
+    color: #CAE329 !important;
+}
+
+footer[role="contentinfo"] .footer-bottom {
+    border-top: 1px solid rgba(202, 227, 41, 0.3) !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+}
+
+footer[role="contentinfo"] .footer-bottom p {
+    color: #fff !important;
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Общие стили для всех списков в футере */
+footer[role="contentinfo"] ul {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+}
+
+footer[role="contentinfo"] ul li {
+    color: #000 !important;
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+footer[role="contentinfo"] ul li::before {
+    content: none !important;
+    display: none !important;
+}
+
+footer[role="contentinfo"] ul li::marker {
+    content: none !important;
+    display: none !important;
+}
+
+/* Включаем чёрные точки для списка услуг в футере */
+footer[role="contentinfo"] .footer-services {
+    text-align: left !important;
+}
+
+footer[role="contentinfo"] .footer-services ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+footer[role="contentinfo"] .footer-services ul li {
+    margin-bottom: 8px !important;
+    color: #000 !important;
+    list-style: none !important;
+    display: list-item !important;
+    /* padding-left: 20px !important; */
+    position: relative !important;
+}
+
+footer[role="contentinfo"] .footer-services ul li::before {
+    content: "\2022" !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    font-size: 1.5em !important;
+    display: inline-block !important;
+    width: 1em !important;
+    margin-left: -1em !important;
+    position: absolute !important;
+    left: -20px !important;
+    line-height: 1 !important;
+}
+
+footer[role="contentinfo"] .footer-services ul li a {
+    display: inline !important;
+}
+
+/* Убираем точки из списка навигации в футере */
+footer[role="contentinfo"] .aria-label ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li {
+    display: inline !important;
+    margin-right: 20px !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li a {
+    color: #4B0082 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li a:hover {
+    color: #CAE329 !important;
+}
+
+/* Адаптивность футера из Lesnoy_code */
+
+@media (max-width: 768px) {
+    footer[role="contentinfo"] .container {
+        padding: 20px 10px !important;
+    }
+    
+    footer[role="contentinfo"] .footer-content section {
+        margin: 0 0 20px 0 !important;
+    }
+    
+    footer[role="contentinfo"] .footer-content h3 {
+        font-size: 16px !important;
+    }
+    
+    footer[role="contentinfo"] .footer-content p {
+        font-size: 13px !important;
+    }
+}
+
+/* Принудительная синхронизация стилей футера с Lesnoy_code */
+footer[role="contentinfo"] {
+    background-color: #193c6d !important;
+    border-top: 2px solid #CAE329 !important;
+    color: #fff !important;
+}
+
+footer[role="contentinfo"] .footer-content {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+footer[role="contentinfo"] .footer-content section {
+    flex: 1 1 220px !important;
+    min-width: 220px !important;
+    text-align: left !important;
+    margin: 0 10px !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+footer[role="contentinfo"] .footer-content h3 {
+    color: #000 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 12px !important;
+}
+
+footer[role="contentinfo"] .footer-content p {
+    color: #000 !important;
+}
+
+footer[role="contentinfo"] .footer-content a {
+    color: #0000FF !important;
+    text-decoration: underline !important;
+}
+
+footer[role="contentinfo"] .footer-bottom p {
+    color: #4B0082 !important;
+    font-size: 16px !important;
+}
+
+footer[role="contentinfo"] .footer-bottom a {
+    color: #4B0082 !important;
+    font-size: 16px !important;
+    text-decoration: underline !important;
+}
+
+footer[role="contentinfo"] .footer-content a:hover,
+footer[role="contentinfo"] .footer-bottom a:hover,
+footer[role="contentinfo"] .aria-label ul li a:hover {
+    color: #4B0082 !important;
+}
+
+footer[role="contentinfo"] .footer-bottom {
+    border-top: 1px solid rgba(202,227,41,0.3) !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+}
+
+footer[role="contentinfo"] .aria-label ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+footer[role="contentinfo"] .aria-label ul li {
+    display: inline-block !important;
+    margin-right: 20px !important;
+}
+
+footer[role="contentinfo"] .container {
+    padding-bottom: 70px !important;
+    }
+
+}
+
 }
 
 @media screen and (max-width: 391px) {
@@ -897,5 +1333,307 @@ ul {
  	width: 290px;
 }
 
+footer[role="contentinfo"] .container {
+    padding-bottom: 70px !important;
+    }
+
+}
+
+/* ===========================================
+   СТИЛИ ИИ-АССИСТЕНТА
+   =========================================== */
+
+.ai-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 70px;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.ai-widget-button {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #CAE329 0%, #a8c520 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(202, 227, 41, 0.4);
+    transition: all 0.3s ease;
+    animation: ai-pulse 2s infinite;
+}
+
+.ai-widget-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(202, 227, 41, 0.6);
+}
+
+@keyframes ai-pulse {
+    0%, 100% { box-shadow: 0 4px 12px rgba(202, 227, 41, 0.4); }
+    50% { box-shadow: 0 4px 20px rgba(202, 227, 41, 0.8); }
+}
+
+.ai-icon {
+    font-size: 28px;
+}
+
+.ai-chat-container {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: ai-slideUp 0.3s ease;
+}
+
+@keyframes ai-slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ai-chat-container.ai-active {
+    display: flex;
+}
+
+.ai-chat-header {
+    background: linear-gradient(135deg, #003073 0%, #029797 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.ai-header-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ai-voice-toggle {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.ai-voice-toggle:hover,
+.ai-voice-toggle.ai-active {
+    background: #CAE329;
+    color: #000;
+}
+
+.ai-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.ai-close-btn:hover {
+    color: #CAE329;
+    transform: scale(1.2);
+}
+
+.ai-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.ai-message {
+    margin-bottom: 15px;
+    max-width: 85%;
+    animation: ai-messageAppear 0.3s ease;
+}
+
+@keyframes ai-messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ai-message-user {
+    margin-left: auto;
+}
+
+.ai-message-bot {
+    margin-right: auto;
+}
+
+.ai-message-content {
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.ai-message-user .ai-message-content {
+    background: linear-gradient(135deg, #003073 0%, #029797 100%);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.ai-message-bot .ai-message-content {
+    background: white;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-bottom-left-radius: 4px;
+}
+
+.ai-chat-input-area {
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ai-input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 25px;
+    padding: 5px 5px 5px 15px;
+}
+
+.ai-chat-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 14px;
+    outline: none;
+}
+
+.ai-voice-input-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.ai-voice-input-btn:hover,
+.ai-voice-input-btn.ai-recording {
+    background: #ff4444;
+    color: white;
+    animation: ai-recording-pulse 1s infinite;
+}
+
+@keyframes ai-recording-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.ai-send-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #CAE329 0%, #a8c520 100%);
+    border: none;
+    border-radius: 50%;
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.ai-send-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(202, 227, 41, 0.4);
+}
+
+.ai-status {
+    padding: 5px 20px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    background: white;
+}
+
+.ai-status.ai-typing::after {
+    content: '';
+    animation: ai-typing 1.5s infinite;
+}
+
+@keyframes ai-typing {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+    100% { content: '.'; }
+}
+
+.ai-status.ai-speaking::before {
+    content: '🔊 ';
+}
+
+.ai-status.ai-listening::before {
+    content: '🎤 ';
+}
+
+@media (max-width: 480px) {
+    .ai-widget {
+        bottom: 10px;
+        right: 80px;
+    }
+
+    .ai-chat-container {
+        position: fixed;
+        bottom: 70px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        height: calc(100vh - 100px);
+    }
+
+    footer .container {
+        min-height: 700px !important;
+        padding-bottom: 120px !important;
+    }
 }
 
